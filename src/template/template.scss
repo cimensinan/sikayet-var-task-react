@@ -1,0 +1,14 @@
+.template {
+    // padding-right: 0 !important;
+  .paddingLeft {
+    @media (min-width: 1400px) {
+      padding-left: 3rem !important;
+    }
+    @media(min-width: 992px) {
+        padding-left: 3rem !important;
+    }
+    @media (min-width: 1200px) {
+        padding-left: 12px;
+    }
+  }
+}

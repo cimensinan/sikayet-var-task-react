@@ -1,0 +1,158 @@
+@use "../../../assets/scss/variables" as v;
+@use "../../../assets/scss/mixins" as m;
+
+.admin-navbar {
+  @media (min-width: 992px) {
+    height: 100vh;
+    align-items: flex-start !important;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 270px;
+    &.admin-left {
+      left: -270px;
+    }
+  }
+  .container {
+    text-align: center;
+    .avatar {
+      @include m.flexbox(column, center, center, 0);
+      transition: all 1s ease;
+      @media (max-width: 376px) {
+        margin-left: 0;
+        transition: all 1s ease;
+      }
+    }
+    h5 {
+      font-weight: 700;
+      white-space: nowrap;
+      margin-top: 1.3rem;
+      &::before {
+        content: "\007C";
+        color: v.$color2;
+        font-weight: bold;
+        font-size: larger;
+        margin-right: 0.5rem;
+      }
+    }
+    @media (min-width: 992px) {
+      @include m.flexbox(column, center, center, 0);
+    }
+    .admin-brand {
+      .navbar-brand {
+        margin: 0;
+        img {
+          width: 7rem;
+          border-radius: 50%;
+        }
+      }
+      h6 {
+        font-weight: 700;
+        font-size: 1.0625rem;
+      }
+      p {
+        color: v.$color1;
+        font-weight: 500;
+      }
+      @media (min-width: 992px) {
+        text-align: center;
+        margin-left: 0;
+        .navbar-brand {
+          img {
+            width: 8rem;
+            margin: 2rem 0 1.5rem;
+          }
+        }
+      }
+    }
+    .navbar-toggler {
+      background-color: v.$color1;
+      margin-right: 5rem;
+      transition: all 1s ease;
+      @media (max-width: 376px) {
+        margin-right: 0rem;
+        transition: all 1s ease;
+      }
+    }
+    .navbar-nav {
+      margin-top: 1rem;
+      @include m.flexbox(column, center, center, 0);
+      @media (min-width: 992px) {
+        flex-direction: column !important;
+      }
+      a {
+        &.active {
+          color: v.$color4;
+          background-color: v.$color1;
+        }
+        width: 9rem;
+        @include m.flexbox(row, flex-start, center, 1rem);
+        svg {
+          font-size: 1.2rem;
+          margin-left: 1.5rem;
+        }
+        color: v.$color4;
+        font-weight: 500;
+        font-size: 0.875rem;
+        margin: 0.4rem;
+        width: 12rem;
+        border-radius: 0.25rem;
+        &:hover {
+          background-color: v.$color1;
+          transition: all 1s ease;
+        }
+        &:last-child {
+          padding-left: 1.5rem;
+          @media (min-width: 992px) {
+            margin-top: 2rem;
+            padding-left: 2rem;
+            svg {
+              margin-left: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .toggle-button {
+    display: none;
+    @media (min-width: 992px) {
+      position: absolute;
+      top: 1rem;
+      left: 270px;
+      z-index: 100;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      transition: left 0.3s ease;
+      display: block;
+      div {
+        color: v.$color10;
+        transition: transform 0.3s ease;
+        margin: 0 0 -2rem -0.4rem;
+        padding: 0;
+        width: 1.1rem;
+        height: 3.3rem;
+        background-color: v.$color1;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        position: relative;
+        svg {
+          font-size: 2rem;
+          color: v.$color3;
+          transition: transform 0.3s ease;
+          position: absolute;
+          bottom: 0.7rem;
+          left: -0.45rem;
+        }
+      }
+      &.active {
+        left: 270px;
+        svg {
+          transform: rotate(180deg);
+          transition: transform 0.3s ease;
+        }
+      }
+    }
+  }
+}

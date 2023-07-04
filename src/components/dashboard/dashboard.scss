@@ -1,0 +1,60 @@
+@use "../../assets/scss/variables" as v;
+@use "../../assets/scss/mixins" as m;
+
+.dashboard-cards{
+    a{
+        text-decoration: none;
+    }
+    .card{
+        border-radius: .5rem;
+        border: none;
+        &:hover{
+            transition: transform 1s ease;
+            transform: scale(1.1);
+        }
+        svg{
+            font-size: 3rem;
+            margin: 1rem;
+        }
+        .card-title{
+            color: v.$color6;
+            margin: 0 1rem 5rem;
+            font-size: 0.875rem;
+        }
+        span{
+            position: absolute;
+            bottom: 1rem;
+            right: 1.5rem;
+            font-size: 1.875rem;
+            font-weight: 700;
+        }
+    }
+    .students-card{
+        background-color: v.$color12;
+        svg{
+            color: v.$color11;
+        }
+    }
+    .course-card{
+        background-color: v.$color15;
+        svg{
+            color: v.$color13;
+        }
+    }
+    .payments-card{
+        background-color: v.$color16;
+        svg{
+            color: v.$color8;
+        }
+    }
+    .users-card{
+        background: linear-gradient(134deg, v.$color1 0%, v.$color2 100%);
+        svg{
+            color: v.$color3;
+        }
+        .card-title{
+            color: v.$color3;
+        }
+    }
+
+}
